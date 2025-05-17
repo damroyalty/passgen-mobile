@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Matrix animation background -->
+    <com.yourapp.passwordgen.MatrixBackgroundView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Main content container -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Header with animated glow -->
+        <TextView
+            android:id="@+id/header_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"
+            android:text="🔐 PASS GEN"
+            android:textColor="#00FF00"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.1"/>
+
+        <!-- Character Options -->
+        <LinearLayout
+            android:id="@+id/character_options"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1A1A1A"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="monospace"
+                android:text="Include:"
+                android:textColor="#00FF00"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/check_lowercase"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#00FF00"
+                android:checked="true"
+                android:text="Lowercase (a-z)"
+                android:textColor="#00FF00" />
+
+            <CheckBox
+                android:id="@+id/check_uppercase"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#00FF00"
+                android:checked="true"
+                android:text="Uppercase (A-Z)"
+                android:textColor="#00FF00" />
+
+            <CheckBox
+                android:id="@+id/check_numbers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#00FF00"
+                android:checked="true"
+                android:text="Numbers (0-9)"
+                android:textColor="#00FF00" />
+
+            <CheckBox
+                android:id="@+id/check_symbols"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#00FF00"
+                android:checked="true"
+                android:text="Symbols (!@#...)"
+                android:textColor="#00FF00" />
+        </LinearLayout>
+
+        <!-- Length Selector -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/length_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="Length: 16"
+                android:textColor="#00FF00"
+                android:textSize="16sp" />
+
+            <SeekBar
+                android:id="@+id/length_seek_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:max="32"
+                android:min="8"
+                android:progress="16"
+                android:progressTint="#00FF00"
+                android:thumbTint="#00FF00" />
+        </LinearLayout>
+
+        <!-- Generate Button -->
+        <Button
+            android:id="@+id/generate_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#1A1A1A"
+            android:elevation="12dp"
+            android:fontFamily="monospace"
+            android:padding="16dp"
+            android:text="GENERATE PASSWORD"
+            android:textAllCaps="false"
+            android:textColor="#00FF00"
+            android:textSize="18sp" />
+
+        <!-- Password Display with Copy Button -->
+        <RelativeLayout
+            android:id="@+id/password_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#101010"
+            android:elevation="8dp"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/password_display"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/copy_button"
+                android:fontFamily="monospace"
+                android:text="••••••••••••••••"
+                android:textColor="#00FF00"
+                android:textSize="24sp" />
+
+            <ImageButton
+                android:id="@+id/copy_button"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentRight="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_copy"
+                android:contentDescription="Copy password"
+                android:tint="#00FF00" />
+        </RelativeLayout>
+
+        <!-- Social Footer (modified to remove "Connect:") -->
+        <LinearLayout
+            android:id="@+id/social_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <!-- Social links will be added programmatically -->
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

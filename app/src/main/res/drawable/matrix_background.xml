@@ -1,0 +1,20 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- background black layer -->
+    <item>
+        <color android:color="#000000" />
+    </item>
+
+    <!-- subtle green radial glow -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="radial"
+                android:centerX="50%"
+                android:centerY="50%"
+                android:gradientRadius="400dp"
+                android:startColor="#003300"
+                android:endColor="#000000"
+                android:useLevel="false" />
+        </shape>
+    </item>
+</layer-list>
